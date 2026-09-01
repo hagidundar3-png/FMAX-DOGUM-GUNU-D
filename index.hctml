@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammed Furkan - Doğum Günü Özel Sitem 🎉</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Outfit:wght@500;700;900&display=swap" rel="stylesheet">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // EmailJS Public Key buraya gelecek
+            emailjs.init("YOUR_PUBLIC_KEY");
+        })();
+    </script>
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --primary: #8b5cf6;
+            --accent: #ec4899;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.25) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(236, 72, 153, 0.2) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 20px 12px 60px 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 8px;
+            background: linear-gradient(to right, #fff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.subtitle {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .countdown {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .time-box {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 12px 6px;
+            border-radius: 16px;
+        }
+
+        .time-box span {
+            display: block;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .time-box label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .slider-container { margin: 20px 0; }
+
+        .love-val {
+            font-size: 2.5rem;
+            font-weight: 800;
+            font-family: 'Outfit', sans-serif;
+            color: var(--accent);
+            margin: 10px 0;
+            text-shadow: 0 0 15px rgba(236, 72, 153, 0.4);
+        }
+
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 10px;
+            border-radius: 5px;
+            background: #334155;
+            outline: none;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: var(--accent);
+            cursor: pointer;
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        .meter-reaction {
+            font-size: 0.95rem;
+            font-weight: 600;
+            min-height: 24px;
+            color: #e2e8f0;
+        }
+
+        .question-box {
+            position: relative;
+            min-height: 140px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+            width: 100%;
+            justify-content: center;
+            position: relative;
+            min-height: 50px;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 50px;
+            border: none;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-yes {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-no {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            position: absolute;
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            text-align: left;
+        }
+
+        label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-left: 4px;
+        }
+
+        input[type=text], textarea {
+            width: 100%;
+            padding: 14px;
+            border-radius: 14px;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        textarea { resize: none; height: 100px; }
+
+        .btn-submit {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 14px;
+            border-radius: 14px;
+            border: none;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 5px;
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(8px);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 24px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 380px;
+        }
+
+        .modal h2 { font-size: 1.8rem; margin-bottom: 10px; color: #10b981; }
+        .modal p { color: #cbd5e1; font-size: 0.95rem; margin-bottom: 20px; }
+        .modal button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="card">
+            <span class="profile-badge">🎉 Doğum Günü Özel</span>
+            <h1>Muhammed Furkan</h1>
+            <p class="subtitle">9 Eylül Doğum Günü Sayacı & Özel Sitem!</p>
+            
+            <div class="countdown">
+                <div class="time-box"><span id="days">00</span><label>Gün</label></div>
+                <div class="time-box"><span id="hours">00</span><label>Saat</label></div>
+                <div class="time-box"><span id="minutes">00</span><label>Dak</label></div>
+                <div class="time-box"><span id="seconds">00</span><label>Sn</label></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Beni Ne Kadar Seviyorsun? ❤️</h2>
+            <div class="love-val" id="loveVal">%50</div>
+            <div class="slider-container">
+                <input type="range" id="loveSlider" min="0" max="100" value="50">
+            </div>
+            <div class="meter-reaction" id="meterText">Fena Değil! 👍</div>
+        </div>
+
+        <div class="card question-box" id="qBox">
+            <h2>Bana Doğum Günü Hediyesi Alacak Mısın? 🎁</h2>
+            <div class="btn-group">
+                <button class="btn btn-yes" onclick="showModal('ADAMSIN! 😎', 'Zaten aksi düşünülemezdi, hediyemi bekliyorum!')">EVET!</button>
+                <button class="btn btn-no" id="noBtn">HAYIR</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Bana Bir Not / Dilek Bırak 📝</h2>
+            <p class="subtitle" style="margin-bottom: 15px;">Doğum günü mesajını aşağıya yazabilirsin!</p>
+            
+            <form id="contact-form">
+                <div>
+                    <label>Adın / Takma Adın</label>
+                    <input type="text" name="user_name" placeholder="Örn: Ahmet" required>
+                </div>
+                <div>
+                    <label>Mesajın</label>
+                    <textarea name="message" placeholder="İyi ki doğdun kanka!..." required></textarea>
+                </div>
+                <button type="submit" class="btn-submit" id="submitBtn">Notu Gönder 🚀</button>
+            </form>
+        </div>
+
+        <footer>
+            Made with ❤️ for Muhammed Furkan | 2026
+        </footer>
+
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h2 id="modalTitle">Tebrikler!</h2>
+            <p id="modalBody">Mesajın başarıyla iletildi!</p>
+            <button onclick="closeModal()">Kapat</button>
+        </div>
+    </div>
+
+    <script>
+        // 1. Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            let targetYear = now.getFullYear();
+            let targetDate = new Date(`September 9, ${targetYear} 00:00:00`);
+
+            if (now > targetDate) {
+                targetDate = new Date(`September 9, ${targetYear + 1} 00:00:00`);
+            }
+
+            const diff = targetDate - now;
+
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = d < 10 ? '0' + d : d;
+            document.getElementById('hours').innerText = h < 10 ? '0' + h : h;
+            document.getElementById('minutes').innerText = m < 10 ? '0' + m : m;
+            document.getElementById('seconds').innerText = s < 10 ? '0' + s : s;
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // 2. Love Meter
+        const slider = document.getElementById('loveSlider');
+        const loveVal = document.getElementById('loveVal');
+        const meterText = document.getElementById('meterText');
+
+        const reactions = [
+            { max: 10, text: "Aşk olsun be... 💔" },
+            { max: 30, text: "Bu kadar mı cidden? 🙁" },
+            { max: 50, text: "Fena Değil! 👍" },
+            { max: 75, text: "Seviliyorsun kanka! 🔥" },
+            { max: 99, text: "Kral adamsın! ❤️" },
+            { max: 100, text: "İSTE BUMMM! %100 GERÇEK SEVGİ! 🚀👑" }
+        ];
+
+        slider.addEventListener('input', (e) => {
+            const val = e.target.value;
+            loveVal.innerText = `%${val}`;
+            for (let r of reactions) {
+                if (val <= r.max) {
+                    meterText.innerText = r.text;
+                    break;
+                }
+            }
+        });
+
+        // 3. Runaway No Button
+        const noBtn = document.getElementById('noBtn');
+        const qBox = document.getElementById('qBox');
+
+        function moveButton() {
+            const boxRect = qBox.getBoundingClientRect();
+            const btnRect = noBtn.getBoundingClientRect();
+
+            const maxX = boxRect.width - btnRect.width - 20;
+            const maxY = boxRect.height - btnRect.height - 20;
+
+            const randomX = Math.floor(Math.random() * maxX) - (maxX / 2);
+            const randomY = Math.floor(Math.random() * maxY) - (maxY / 2);
+
+            noBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
+        }
+
+        noBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            moveButton();
+        });
+        noBtn.addEventListener('mouseover', moveButton);
+
+        // 4. EmailJS Form Submit
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const btn = document.getElementById('submitBtn');
+            btn.innerText = 'Gönderiliyor... ⏳';
+
+            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+                .then(function() {
+                    btn.innerText = 'Notu Gönder 🚀';
+                    showModal('Harika! 🎉', 'Mesajın başarıyla e-postama iletildi!');
+                    document.getElementById('contact-form').reset();
+                }, function(error) {
+                    btn.innerText = 'Notu Gönder 🚀';
+                    showModal('Hata! ❌', 'Gönderilirken bir sorun oluştu. Lütfen EmailJS bilgilerini kontrol et.');
+                });
+        });
+
+        // Modal Controls
+        function showModal(title, body) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalBody').innerText = body;
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
